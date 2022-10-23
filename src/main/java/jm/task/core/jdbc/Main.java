@@ -12,9 +12,12 @@ import java.util.List;
 public class Main {
 
 
-    public static void main(String[] args) throws SQLException {
-        UserService userService = new UserServiceImpl();
- userService.createUsersTable();
+    public static void main(String[] args) {
+       UserService userService = new UserServiceImpl();
+//        userService.createUsersTable();
+//        userService.saveUser("efg","dfgb",(byte)45);
+        System.out.println(userService.getAllUsers().toString());
+
 
 
 

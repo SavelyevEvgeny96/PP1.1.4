@@ -34,8 +34,9 @@ public class Util {
                 properties.put(Environment.USER, USER_NAME);
                 properties.put(Environment.PASS, PASSWORD);
                 properties.put(Environment.SHOW_SQL, "true");
-                  properties.put(Environment.HBM2DDL_AUTO, "");
+                  properties.put(Environment.HBM2DDL_AUTO, "update");
                 configuration.setProperties(properties);
+
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                         .applySettings(configuration.getProperties()).build();
