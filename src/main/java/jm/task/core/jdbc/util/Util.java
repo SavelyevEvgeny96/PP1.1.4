@@ -29,10 +29,12 @@ public class Util {
             try {
                 Configuration configuration = new Configuration().addAnnotatedClass(User.class);
                 Properties properties = new Properties();
-                properties.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
+                properties.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
                 properties.put(Environment.URL, MYSQL_URL);
                 properties.put(Environment.USER, USER_NAME);
                 properties.put(Environment.PASS, PASSWORD);
+                properties.put(Environment.DIALECT,"org.hibernate.dialect.MySQL5Dialect");
+                properties.put(Environment.CURRENT_SESSION_CONTEXT_CLASS,"thread");
                 properties.put(Environment.SHOW_SQL, "true");
                   properties.put(Environment.HBM2DDL_AUTO, "update");
                 configuration.setProperties(properties);
